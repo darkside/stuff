@@ -1,0 +1,38 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	fetch = +refs/heads/*:refs/remotes/origin/*
+	url = git@github.com:dmcbrazil/dmc_dev.git
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[branch "respostas_de_novo"]
+	remote = origin
+	merge = refs/heads/respostas_de_novo
+[branch "spike_minisites"]
+	remote = origin
+	merge = refs/heads/spike_minisites
+[branch "upgrade-rails-2.3.8"]
+	remote = origin
+	merge = refs/heads/upgrade-rails-2.3.8
+[branch "interface_gerador_apresentacoes"]
+	remote = origin
+	merge = refs/heads/interface_gerador_apresentacoes
+[branch "pdf-kit"]
+	remote = origin
+	merge = refs/heads/pdf-kit
+[branch "tweaking_environment"]
+	remote = origin
+	merge = refs/heads/tweaking_environment
+[branch "pdf-kit-returns"]
+	remote = origin
+	merge = refs/heads/pdf-kit-returns
+[gui]
+	wmstate = normal
+	geometry = 962x330+389+284 207 192
+[branch "presentation_form"]
+	remote = origin
+	merge = refs/heads/presentation_form
