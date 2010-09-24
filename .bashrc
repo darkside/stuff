@@ -86,6 +86,29 @@ if [[ -n "$PS1" ]] ; then
   alias vai='git push origin master'
   alias vem='git pull --rebase origin master'
   alias cap='bin/cap'
+  alias wtf='dmesg'
+  alias onoz='cat /var/log/errors.log'
+  alias rtfm='man'
+
+  alias visible='echo'
+  alias invisible='cat'
+  alias moar='more'
+
+  alias icanhas='mkdir'
+  alias donotwant='rm'
+  alias dowant='cp'
+  alias gtfo='mv'
+
+  alias hai='cd'
+  alias plz='pwd'
+
+  alias inur='locate'
+
+  alias nomz='ps -aux'
+  alias nomnom='killall'
+
+  alias cya='reboot'
+  alias kthxbai='halt'
   # You may want to put all your additions into a separate file like
   # ~/.bash_aliases, instead of adding them here directly.
   # See /usr/share/doc/bash-doc/examples in the bash-doc package.
