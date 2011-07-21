@@ -126,7 +126,10 @@ if [[ -n "$PS1" ]] ; then
 
   export GIT_PS1_SHOWDIRTYSTATE=1
   export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
+  # If you wanna show your rubies uncomment this. Needs moar cowbells tho
+  #export PS1="\$(~/.rvm/bin/rvm-prompt i v) $PS1"
 
 fi
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+
