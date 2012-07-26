@@ -9,7 +9,7 @@ if [[ -n "$PS1" ]] ; then
   HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
   # ... or force ignoredups and ignorespace
   HISTCONTROL=ignoreboth
-
+  export RUBY_ENV="development"
   # append to the history file, don't overwrite it
   shopt -s histappend
 
@@ -35,7 +35,7 @@ if [[ -n "$PS1" ]] ; then
   # uncomment for a colored prompt, if the terminal has the capability; turned
   # off by default to not distract the user: the focus in a terminal window
   # should be on the output of commands, not on the prompt
-  #force_color_prompt=yes
+  force_color_prompt=yes
 
   if [ -n "$force_color_prompt" ]; then
       if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -100,6 +100,7 @@ if [[ -n "$PS1" ]] ; then
   alias gtfo='mv'
 
   alias hai='cd'
+  alias go='bin/rspec'
   alias plz='pwd'
 
   alias inur='locate'
@@ -133,3 +134,4 @@ fi
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

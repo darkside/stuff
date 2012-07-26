@@ -3,11 +3,14 @@ if defined?(::Bundler)
   $LOAD_PATH.concat Dir.glob("#{ENV['rvm_ruby_global_gems_path']}/gems/*/lib")
 end
 
-require 'rubygems' rescue nil
+require 'rubygems' unless defined? Gem
+require 'irb/completion'
+ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
 require 'wirble'
+require 'wirb'
 require 'hirb'
 require 'ap'
-
+Wirb.start
 # load wirble
 Wirble.init
 Wirble.colorize
@@ -23,10 +26,6 @@ if ENV.include?('RAILS_ENV')
     Object.const_set('RAILS_DEFAULT_LOGGER', Logger.new(STDOUT))
   end
 
-  def sql(query)
-    ActiveRecord::Base.connection.select_all(query)
-  end
-
   if ENV['RAILS_ENV'] == 'test'
     require 'test/test_helper'
   end
@@ -35,7 +34,7 @@ if ENV.include?('RAILS_ENV')
 elsif defined?(Rails) && !Rails.env.nil?
   if Rails.logger
     Rails.logger =Logger.new(STDOUT)
-    ActiveRecord::Base.logger = Rails.logger
+    ActiveRecord::Base.logger = Rails.logger if defined?(ActiveRecord)
   end
   if Rails.env == 'test'
     require 'test/test_helper'
@@ -50,4 +49,3 @@ def show(obj)
 end
 
 puts "> all systems are go wirble/hirb/ap/show <"
-
